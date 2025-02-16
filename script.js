@@ -87,16 +87,6 @@ function createLabeledStyle(feature, baseStyle) {
 const map = new ol.Map({
     target: 'map',
     layers: [],
-    // Remove the existing controls configuration
-    controls: ol.control.defaults().extend([
-        new ol.control.ScaleLine({
-            units: 'metric',
-            bar: true,
-            steps: 4,
-            text: true,
-            minWidth: 140
-        })
-    ]),
     view: new ol.View({
         center: [0, 0],
         zoom: 17,
