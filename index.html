@@ -31,17 +31,34 @@
                         <i class="fas fa-search"></i>
                         Search
                     </button>
+                    <button id="toggleTracking" class="nav-button">
+                        <i class="fas fa-location-arrow"></i>
+                        Tracking
+                    </button>
+                    <button id="simulateLocation" class="nav-button">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Simulate Location
+                    </button>
                 </div>
             </div>
         </nav>
 
 <!-- Main Map Container -->
 <div class="map-container">
-    <div id="map" class="map"></div>
-    
-    <!-- North Arrow -->
-    <div id="northArrow" class="north-arrow">
-        <i class="fas fa-arrow-up"></i>
+    <div id="map" class="map">
+        <!-- North Arrow -->
+        <div id="northArrow" class="north-arrow">
+            <i class="fas fa-arrow-up"></i>
+        </div>
+        
+        <!-- Zoom and Rotation Controls -->
+        <div class="map-controls">
+            <button id="zoomIn" class="control-button" title="Zoom In"><i class="fas fa-plus"></i></button>
+            <button id="zoomOut" class="control-button" title="Zoom Out"><i class="fas fa-minus"></i></button>
+            <button id="rotateLeft" class="control-button" title="Rotate Left"><i class="fas fa-undo"></i></button>
+            <button id="rotateRight" class="control-button" title="Rotate Right"><i class="fas fa-redo"></i></button>
+            <button id="resetRotation" class="control-button" title="Reset Rotation"><i class="fas fa-compass"></i></button>
+        </div>
     </div>
     
     <!-- Search Panel -->
@@ -142,16 +159,6 @@
             <span class="sidebar-timestamp" id="popupTimestamp"></span>
         </div>
     </div>
-</div>
-<!-- Zoom Buttons -->
-<div class="zoom-controls">
-    <button id="zoomIn" class="zoom-button">
-        <i class="fas fa-plus"></i>
-    </button>
-    <button id="zoomOut" class="zoom-button">
-        <i class="fas fa-minus"></i>
-    </button>
-</div>
 </div>
 <script src="script.js"></script>
 </body>
