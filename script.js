@@ -165,11 +165,11 @@ let userPositionLayer = new ol.layer.Vector({
         image: new ol.style.Circle({
             radius: 8,
             fill: new ol.style.Fill({
-                color: 'rgba(0, 87, 255, 0.9)'
+                color: 'rgb(188,20,20)'
             }),
             stroke: new ol.style.Stroke({
-                color: '#ffffff',
-                width: 2
+                color: '#322d2d',
+                width: 5
             })
         })
     }),
