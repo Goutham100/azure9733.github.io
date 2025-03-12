@@ -315,7 +315,6 @@ let followUserPosition = true;
 
 // Get the tracking and simulate location buttons
 const trackingButton = document.getElementById('toggleTracking');
-const simulateLocationButton = document.getElementById('simulateLocation');
 
 // Toggle position tracking
 trackingButton.addEventListener('click', () => {
@@ -341,44 +340,6 @@ trackingButton.addEventListener('click', () => {
         // If tracking is disabled, ensure map is centered on features
         fitMapToFeatures();
     }
-});
-
-// Simulate location at map center (for testing or remote users)
-simulateLocationButton.addEventListener('click', () => {
-    const mapCenter = map.getView().getCenter();
-    
-    // Create a simulated position at the map center
-    const simulatedPosition = mapCenter;
-    
-    // Update the user position feature with the simulated position
-    userPositionFeature.setGeometry(new ol.geom.Point(simulatedPosition));
-    
-    // Create a small accuracy circle
-    const circle = new ol.geom.Circle(simulatedPosition, 10);
-    accuracyFeature.setGeometry(circle);
-    
-    // Enable tracking and center on the simulated position
-    followUserPosition = true;
-    trackingButton.classList.add('active');
-    
-    map.getView().animate({
-        center: simulatedPosition,
-        duration: 500
-    });
-    
-    // Show notification
-    let notification = document.getElementById('location-notification');
-    if (!notification) {
-        notification = document.createElement('div');
-        notification.id = 'location-notification';
-        notification.className = 'location-notification';
-        document.querySelector('.game-container').appendChild(notification);
-    }
-    
-    notification.textContent = 'Simulated location activated at map center';
-    notification.style.animation = 'none';
-    notification.offsetHeight; // Trigger reflow
-    notification.style.animation = 'fadeInOut 5s forwards';
 });
 
 // Start tracking when map is loaded
